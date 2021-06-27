@@ -6,7 +6,7 @@ class App extends Component {
     this.state = {
          bodyColor: 'grey',
          headingColor: 'white',
-         colorName: 'Green',
+         colorName: 'Red',
     }
 }
 
@@ -18,9 +18,9 @@ generateRGBColor(){
     let val = `rgb(${r}, ${g}, ${b})`;
     return val;
 }
-nameColorRed(){
-  let red ='Red'
-  return red;
+nameColorGreen(){
+  let green ='Green'
+  return green;
 }
 
 componentDidMount(){
@@ -28,12 +28,11 @@ componentDidMount(){
          this.setState({
               bodyColor: this.generateRGBColor(),
               headingColor: this.generateRGBColor(),
-              colorName: this.nameColorRed(),
+              colorName: this.nameColorGreen(),
          })
     }, 5000);
 }
 
-// unmounting for preventing memory leakes.
 componentWillUnmount(){
     clearInterval(this.interval);
 }
